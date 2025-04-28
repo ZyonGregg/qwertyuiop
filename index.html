@@ -111,10 +111,32 @@
     .text-glow {
       text-shadow: 0 1px 3px rgba(255, 255, 255, 0.2);
     }
-    .fade-in-extra {
-      animation: fadeInMain 1.5s ease-out forwards;
+    
+    /* Make Hero Image responsive */
+    .hero-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
     
+    /* Mobile-friendly tweaks for text */
+    .hero-text {
+      font-size: 1.5rem;
+      line-height: 1.75;
+    }
+
+    /* Navbar fix for mobile */
+    @media (max-width: 768px) {
+      .navbar {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .navbar a {
+        margin: 10px 0;
+      }
+    }
   </style>
 </head>
 
@@ -137,7 +159,7 @@
     <header class="fixed w-full bg-white bg-opacity-10 backdrop-blur-md shadow z-50 text-white">
       <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <div class="text-xl font-bold text-red-500">Minimum Age, Minimum Wage</div>
-        <nav class="space-x-6 font-medium">
+        <nav class="space-x-6 font-medium navbar">
           <a href="index.html" class="hover:text-red-400 transition duration-300">Home</a>
           <a href="about.html" class="hover:text-red-400 transition duration-300">About</a>
           <a href="article.html" class="hover:text-red-400 transition duration-300">Article</a>
@@ -146,23 +168,27 @@
           <a href="improvements.html" class="hover:text-red-400 transition duration-300">Improvements</a>
           <a href="issue.html" class="hover:text-red-400 transition duration-300">The Issue</a>
         </nav>
-        
       </div>
     </header>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-6 max-w-7xl mx-auto" data-aos="fade-up">
       <div class="flex flex-col-reverse md:flex-row items-center">
-        <div class="w-full md:w-1/2">
-          <h1 class="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-xl text-glow">Let Children Be Children.</h1>
+        <div class="w-full md:w-1/2 hero-text">
+          <h1 class="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-xl text-glow">
+            Let Children Be Children.
+          </h1>
           <p class="text-lg text-white mb-6">
-            Every child deserves a safe childhood and a promise of a better future. Yet, nearly 1 in 10 children around the world are trapped in child labour, forced to make sacrifices when they shouldn’t have. As of early 2020, an estimated 160 million children were engaged in child labour & nearly half in hazardous work that threatens their overall well-being. 
+            Every child deserves a safe childhood and a promise of a better future. Yet, nearly 1 in 10 children around the world are trapped in child labour, forced to make sacrifices when they shouldn’t have. As of early 2020, an estimated 160 million children were engaged in child labour & nearly half in hazardous work that threatens their overall well-being.
             Driven by poverty and hardships, many children are pushed into work at an early age, often under dangerous and exploitative conditions. Children in need are especially vulnerable, with some trafficked across borders or recruited by armed groups. This global crisis continues to take children’s rights.
           </p>
-          <a href="voicebox.html" class="inline-block bg-red-600 text-white px-6 py-3 rounded shadow hover:bg-red-700 transition btn-glow">Take Action</a>
-        </div>        
+          <a href="voicebox.html" class="inline-block bg-red-600 text-white px-6 py-3 rounded shadow hover:bg-red-700 transition btn-glow">
+            Take Action
+          </a>
+        </div>
+
         <div class="w-full md:w-1/2 mb-8 md:mb-0">
-          <img src="https://i.pinimg.com/474x/69/f1/04/69f1040f360511bb6744177ee54287b2.jpg" alt="Hero Image" class="rounded-lg shadow-lg zoom-in">
+          <img src="https://i.pinimg.com/474x/69/f1/04/69f1040f360511bb6744177ee54287b2.jpg" alt="Hero Image" class="rounded-lg shadow-lg zoom-in hero-image">
         </div>
       </div>
     </section>
@@ -194,7 +220,7 @@
         <h2 class="text-3xl md:text-4xl font-bold text-red-400 mb-6 text-glow">Watch Our Message</h2>
         <p class="text-gray-300 mb-6">This short documentary shines light on the lives affected by child labor and how you can help.</p>
         <div class="aspect-w-16 aspect-h-9 w-full rounded-lg overflow-hidden shadow-lg zoom-in">
-          <iframe class="w-full h-96 rounded" src="youtube.com" frameborder="0" allowfullscreen></iframe>
+          <iframe class="w-full h-96 rounded" src="https://www.youtube.com/embed/8MdfD5vJ9Ck" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -211,6 +237,7 @@
       </div>
     </footer>
   </div>
+
   <script>
     const intro = document.getElementById("intro");
     const video = document.getElementById("introVideo");
